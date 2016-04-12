@@ -38,7 +38,7 @@ def getMessage():
 	return json_info
 
 #Faz o loop principal para o envio e recebimento das mensagens
-def execute():
+def executeMessages():
 	while True:
 		time.sleep(5)
 		N = set([])
@@ -106,7 +106,7 @@ def syncPeers(url):
 threadPeers = Thread(None, executePeers, (), {}, None)
 threadPeers.start()
 #Inicializa a thread para a sincronização das mensagens
-threadMessages = Thread(None, execute, (), {}, None)
+threadMessages = Thread(None, executeMessages, (), {}, None)
 threadMessages.start()
 
 
